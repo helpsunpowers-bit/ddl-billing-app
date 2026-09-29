@@ -408,7 +408,7 @@ tx(fd(e.d),80,y+6,'24px '+F);tx(e.t=='gave'?'You Gave':'You Got',250,y+6,'24px '
 nl.forEach((t,i)=>tx(t,640,y+6+i*30,'24px '+F));
 tx(m(Math.abs(b))+(b>0.5?' To Receive':b<-0.5?' To Pay':''),W-80,y+6,'24px '+F,'right',b>0.5?'#1b8a4b':b<-0.5?'#c62828':'#000');
 y+=h;ln();y+=24});
-pg.forEach((k,i)=>{const q=k.getContext('2d');q.textAlign='center';q.fillStyle='#888';q.font='20px '+F;q.fillText('Powered by digidashland.in',W/2,H-40);q.textAlign='right';q.fillText('Page '+(i+1)+'/'+pg.length,W-70,H-40)});
+pg.forEach((k,i)=>{const q=k.getContext('2d');q.textAlign='right';q.fillStyle='#888';q.font='20px '+F;q.fillText('Page '+(i+1)+'/'+pg.length,W-70,H-40)});
 const a=document.createElement('a');a.href=URL.createObjectURL(mkpdf(pg));a.download='ledger-'+p.party.replace(/[^\w]+/g,'_')+'-'+td()+'.pdf';document.body.appendChild(a);a.click();a.remove()}
 function mkpdf(pgs){const E=new TextEncoder(),parts=[],off=[];let len=0;
 const add=d=>{const u=typeof d=='string'?E.encode(d):d;parts.push(u);len+=u.length};
